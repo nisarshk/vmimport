@@ -1,0 +1,9 @@
+[
+  {
+    "Description": "ubuntu16x86",
+    "Format": "vmdk",
+    "UserBucket": {
+        "S3Bucket":"vmimports3",
+        "S3Key":"Ubuntu1-disk1.vmdk"
+    }
+}]

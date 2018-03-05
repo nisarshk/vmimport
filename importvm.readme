@@ -1,0 +1,12 @@
+# Create Role
+aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json
+#put role policy
+aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json
+# Import Image
+aws ec2 import-image --description "Windows 2008 OVA" --license-type BYOL --disk-containers file://containers.json
+#import multiple disks
+aws ec2 import-image --description "Windows 2008 VMDKs" --license-type BYOL --disk-containers file://containers.json
+# configure keys
+aws configure
+# aws import-image progress update
+aws ec2 describe-import-image-tasks
